@@ -1,0 +1,24 @@
+---
+# tasks file for lighthouse-role
+- name: Install Nginx
+  become: yes
+  ansible.builtin.yum:
+    name: nginx
+- name: Apply Nginx template conf
+  become: yes
+  template:
+    backup: yes
+    force: yes
+    src: files/lighthouse.conf.j2
+    dest: /etc/nginx/nginx.conf
+- name: Install Git
+  become: yes
+  ansible.builtin.yum:
+    name: git
+- name: Clone lighthouse
+  become: yes
+  ansible.builtin.git:
+    repo: "{{ lighthouse_repo }}"
+    dest: "{{ lighthouse_root }}"
+    notify: Start lighthouse
+tags: lighthouse

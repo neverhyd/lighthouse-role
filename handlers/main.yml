@@ -1,0 +1,7 @@
+---
+# handlers file for lighthouse-role
+- name: Start lighthouse
+  become: yes
+  ansible.builtin.service:
+    name: lighthouse
+    state: reloaded
