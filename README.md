@@ -11,8 +11,8 @@ Lighthouse
 Переменные
 --------------
 
-lighthouse_repo: url_репозитория
-lighthouse_root: путь к root web сервра
+lighthouse_repo: url_репозитория  
+lighthouse_root: путь к root web сервра  
 
 Зависимости
 ------------
