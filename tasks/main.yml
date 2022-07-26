@@ -20,4 +20,4 @@
   ansible.builtin.git:
     repo: "{{ lighthouse_repo }}"
     dest: "{{ lighthouse_root }}"
-    notify: Start lighthouse
+  notify: Start lighthouse
